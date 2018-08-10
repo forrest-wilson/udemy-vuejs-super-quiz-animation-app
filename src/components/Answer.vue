@@ -10,9 +10,9 @@
 </style>
 <script>
 
-    export default{
+    export default {
         methods: {
-            onNextQuestion() {
+            onNextQuestion () {
                 this.$emit('confirmed');
             }
         }

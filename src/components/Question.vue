@@ -25,8 +25,8 @@
 <script>
     const MODE_ADDITION = 1;
     const MODE_SUBTRACTION = 2;
-    export default{
-        data() {
+    export default {
+        data () {
             return {
                 question: 'Oops, an error ocurred :/',
                 btnData: [
@@ -38,7 +38,7 @@
             };
         },
         methods: {
-            generateQuestion() {
+            generateQuestion () {
                 const firstNumber = this.generateRandomNumber(1, 100);
                 const secondNumber = this.generateRandomNumber(1, 100);
                 const modeNumber = this.generateRandomNumber(1, 2);
@@ -72,7 +72,7 @@
                 this.btnData[correctButton].correct = true;
                 this.btnData[correctButton].answer = correctAnswer;
             },
-            generateRandomNumber(min, max, except) {
+            generateRandomNumber (min, max, except) {
                 const rndNumber = Math.round(Math.random() * (max - min)) + min;
                 console.log(min, max, rndNumber);
                 if (rndNumber == except) {
@@ -80,11 +80,11 @@
                 }
                 return rndNumber;
             },
-            onAnswer(isCorrect) {
+            onAnswer (isCorrect) {
                 this.$emit('answered', isCorrect);
             }
         },
-        created() {
+        created () {
             this.generateQuestion();
         }
     }
